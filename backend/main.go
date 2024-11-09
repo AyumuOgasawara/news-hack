@@ -46,6 +46,15 @@ func main() {
 	// Make default Gin Router
 	router := gin.Default()
 
+	// Set / endpoint
+	router.GET("/", func(c *gin.Context) {
+		// Return JSON Structure
+		c.JSON(http.StatusOK, gin.H{
+			"Title":       "Welcome to NEWS HACK",
+			"Discription": "This is the API for NEWS HACK",
+		})
+	})
+
 	// Set /health endpoint
 	router.GET("/health", func(c *gin.Context) {
 		// Return JSON Structure

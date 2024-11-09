@@ -24,3 +24,4 @@ Install current pre-commit dependencies:
 Install pre-commit:
 
     brew install pre-commit
+    pre-commit install

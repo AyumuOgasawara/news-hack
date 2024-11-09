@@ -13,4 +13,6 @@ repos:
       - id: go-imports
       - id: no-go-testing
       - id: golangci-lint
+        entry: /usr/bin/env sh -c 'cd backend/'
       - id: go-unit-tests
+        entry: /usr/bin/env sh -c 'cd backend/'

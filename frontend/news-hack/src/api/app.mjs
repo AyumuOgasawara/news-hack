@@ -1,25 +1,27 @@
-const express = require('express');
-const fetch = require('node-fetch'); // You can use 'axios' if you prefer
-const bodyParser = require('body-parser');
+import express from 'express';
+import fetch from 'node-fetch';
+import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
-const PORT = 5000; // Change this port if needed
+const PORT = 5001;
 
-// Middleware for parsing JSON bodies
+app.use(cors());
 app.use(bodyParser.json());
 
-// Route to receive form data
-app.post('/your-backend-route', async (req, res) => {
+app.post('/articles', async (req, res) => {
   try {
     const { numArticles, keyword, phoneNumber } = req.body;
 
     // Send the data to another REST API on localhost
     const apiResponse = await fetch('http://localhost:8080/articles', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ numArticles, keyword, phoneNumber }),
+        method: 'GET'
+    // TODO uncomment when API is updated
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ numArticles, keyword, phoneNumber }),
     });
 
     if (!apiResponse.ok) {

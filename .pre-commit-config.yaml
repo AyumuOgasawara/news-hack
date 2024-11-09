@@ -18,4 +18,4 @@ repos:
     rev: v9.14.0
     hooks:
       - id: eslint
-        entry: cd frontend/news-hack
+        args: ["-c", "frontend/news-hack/eslint.config.mjs"]

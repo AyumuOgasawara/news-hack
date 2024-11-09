@@ -16,7 +16,7 @@ export default () => {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+    setFormData({ ...formData, [id]: id === 'numArticles' ? parseInt(value, 10) : value });
   };
 
   const handleSubmit = async (e) => {

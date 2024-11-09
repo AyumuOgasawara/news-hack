@@ -32,7 +32,7 @@ export default () => {
     <h1 style={{fontWeight:"bold", fontFamily: "monospace"
     }}>news hack</h1>
 
-    <DropdownButton id="dropdown-basic-button" title={frequency} style={{fontWeight:"bold", fontFamily: "monospace", width: '100%'
+    <DropdownButton id="dropdown-basic-button" title={frequency} style={{fontWeight:"bold", fontFamily: "monospace", width: '200px'
     }}>
       <Dropdown.Item onClick={handleEveryday}>Everyday</Dropdown.Item>
       <Dropdown.Item onClick={handleEveryWeekday}>Every weekday</Dropdown.Item>
@@ -40,7 +40,7 @@ export default () => {
     </DropdownButton>
 
 
-    <div style={{ marginTop: '20px', width: '50%'}}>
+    <div style={{ marginTop: '20px', width: '200px'}}>
         <Form.Group controlId="formTimeInput">
           <Form.Control
             type="time"

@@ -13,4 +13,12 @@ repos:
       - id: go-imports
       - id: no-go-testing
       - id: golangci-lint
+        entry: /usr/bin/env sh -c 'cd backend/'
       - id: go-unit-tests
+        entry: /usr/bin/env sh -c 'cd backend/'
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.14.0
+    hooks:
+      - id: eslint
+        args: ["-c", "frontend/news-hack/eslint.config.mjs"]
+        entry: /usr/bin/env sh -c 'cd backend/'

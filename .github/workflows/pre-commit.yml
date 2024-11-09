@@ -3,6 +3,7 @@ name: pre-commit
 env:
   go_version: 1.23.3
   python_version: 3.12.7
+  node_version: 22.9.0
 
 on:
   pull_request:
@@ -20,6 +21,9 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: ${{ env.python_version }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node_version }}
       - uses: actions/setup-go@v5
         with:
           go-version: ${{ env.go_version }}
@@ -29,6 +33,10 @@ jobs:
           python3 -m pip install pre-commit
           curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.61.0
           go install golang.org/x/tools/cmd/goimports@latest
+          npm install eslint
+          npm install typescript-eslint
+          npm install eslint-plugin-react
+
       - name: Run pre-commit
         run: |
           pre-commit install

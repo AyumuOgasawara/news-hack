@@ -6,7 +6,7 @@
 
 ## DOCKER
 
-1. `docker build ./ -t news-hac`
+1. `docker build ./ -t news-hack`
 2. `docker run -p 8080:8080 news-hack`
 
 ## ENDPOINTS

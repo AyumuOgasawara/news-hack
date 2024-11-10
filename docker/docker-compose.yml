@@ -1,0 +1,13 @@
+services:
+  frontend:
+    build:
+      context: '../frontend/news-hack'
+      dockerfile: ../../docker/FrontendDockerfile
+    ports:
+      - "5173:5173"
+  backend:
+    build:
+      context: '../frontend/news-hack'
+      dockerfile: ../../docker/BackendDockerfile
+    ports:
+      - "5001:5001"

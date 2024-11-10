@@ -1,6 +1,6 @@
 # news-hack API
 
-## RUN LOCALY
+## RUN LOCALLY
 
 1. `go run main.go`
 

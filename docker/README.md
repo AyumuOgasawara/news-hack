@@ -14,7 +14,7 @@ Build the frontend for the app:
 
 Build the Go API:
 
-    `docker build --file docker/API.Dockerfile backend -t news-hack-api`
+    `docker build --file docker/API.Dockerfile api -t news-hack-api`
     `docker run -p 8080:8080 news-hack-api`
 
 Build all services using docker compose:

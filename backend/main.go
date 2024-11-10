@@ -71,8 +71,15 @@ func sendMessageToWhatsapp(article Article, phoneNumber string) error {
 		return fmt.Errorf("failed to marshal message: %v", err)
 	}
 
+	phoneNumberId := os.Getenv("PHONE_NUMBER_ID")
+	if phoneNumberId == "" {
+		return fmt.Errorf("WhatsApp token is missing")
+	}
+
+	requestURI := fmt.Sprintf("https://graph.facebook.com/v20.0/%s/messages", phoneNumberId)
+
 	// WhatsApp APIにPOSTリクエストを送信
-	req, err := http.NewRequest("POST", "https://graph.facebook.com/v20.0/459929187208110/messages", bytes.NewBuffer(messageData))
+	req, err := http.NewRequest("POST", requestURI, bytes.NewBuffer(messageData))
 	if err != nil {
 		return fmt.Errorf("failed to create HTTP request: %v", err)
 	}
@@ -186,6 +193,7 @@ func main() {
 			err := sendMessageToWhatsapp(article, req.PhoneNumber)
 			if err != nil {
 				log.Printf("Failed to send message to WhatsApp: %v", err)
+				c.JSON(http.StatusInternalServerError, gin.H{"message": "Failed to send Message to WhatsApp"})
 			}
 		}
 

@@ -2,12 +2,18 @@ services:
   frontend:
     build:
       context: '../frontend/news-hack'
-      dockerfile: ../../docker/Frontend.Dockerfile
+      dockerfile: ../docker/Frontend.Dockerfile
     ports:
       - "5173:5173"
   backend:
     build:
       context: '../frontend/news-hack'
-      dockerfile: ../../docker/Backend.Dockerfile
+      dockerfile: ../docker/Backend.Dockerfile
     ports:
       - "5001:5001"
+  api:
+    build:
+      context: '../api'
+      dockerfile: ../docker/API.Dockerfile
+    ports:
+      - "8080:8080"

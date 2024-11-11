@@ -29,7 +29,7 @@
   NOTE: phoneNumber needs to have country code, you can hit this with curl command below
 
 ```sh
-curl -X POST http://localhost:8080/articles \
+curl -X POST http://0.0.0.0:8080/articles \
     -H "Content-Type: application/json" \
     -d '{
         "keyword": "technology",

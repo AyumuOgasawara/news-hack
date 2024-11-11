@@ -14,7 +14,7 @@ app.post('/articles', async (req, res) => {
     const { numArticles, keyword, phoneNumber } = req.body;
 
     // Send the data to another REST API on localhost
-    const apiResponse = await fetch('http://localhost:8080/articles', {
+    const apiResponse = await fetch('http://0.0.0.0:8080/articles', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

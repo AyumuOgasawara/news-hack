@@ -1,51 +1,53 @@
 # news-hack
-ニュースを指定した電話番号のWhatsAppに送信するアプリです。ユーザーは、`キーワード`、`ニュースの件数`、`送信先の電話番号`を入力します。すると送信先の電話番号に指定したキーワードの入ったニュースが指定した件数分送信されます。
+This application sends news articles to a specified phone number via WhatsApp. Users can input a `keyword`, the `number of news articles`, and the `recipient's phone number`. The application will then send the specified number of news articles containing the given keyword to the designated phone number.
 
-
-## なんのために作られたか
-ニュースを読む習慣をつけるために受動的にニュースに触れることができたらいいと思い作成しました。<br>
-現段階はプロトタイプで、今後指定した電話番号に指定した頻度と時間で自動的にニュースが送信されるようにしたいと考えています。
+## Purpose
+This app was developed to encourage a habit of reading news by providing a passive way to engage with news articles.  
+Currently, it is in the prototype stage. In the future, the app aims to automatically send news to specified phone numbers at customized frequencies and times.
 
 ## Architecture Diagram
 ![news-hack](https://github.com/user-attachments/assets/a8f71076-1d4f-4120-af12-fb2b7bb7a966)
 
 ## Technology Stack
 
-| **Category**       | **Technology**                 | **Version**          |
-|--------------------|---------------------------------|----------------------|
-| **APP**       | [React](https://react.dev/)                          | 18.2.0              |
-|        | [Node.js](https://nodejs.org/en)                          |  v22.9.0        |
-| **API**        | [Go](https://go.dev/)                             | 1.23.3              |
-| **API Framework** | [Gin Gonic](https://github.com/gin-gonic/gin)                   | 1.10.0              |
-| **Environment Management** | [godotenv](https://github.com/joho/godotenv)             | 1.5.1               |
+| **Category**           | **Technology**                 | **Version**          |
+|-------------------------|---------------------------------|----------------------|
+| **Frontend (APP)**      | [React](https://react.dev/)    | 18.2.0              |
+|                         | [Node.js](https://nodejs.org/) | 22.9.0              |
+| **Backend (API)**       | [Go](https://go.dev/)          | 1.23.3              |
+| **API Framework**       | [Gin Gonic](https://github.com/gin-gonic/gin) | 1.10.0              |
+| **Environment Manager** | [godotenv](https://github.com/joho/godotenv)  | 1.5.1               |
 
-## 必要条件
-### 前提条件
-Node.jsとGoのインストールが終了している。
+## Prerequisites
+### Installation
+Ensure the following are installed on your system:
+- [Node.js](https://nodejs.org/en)
+- [Go](https://go.dev/)
 
-## 外部サービスの設定
-**NEWS API**
-- 公式に従って登録し、API KEYを取得してください。
+## External Service Setup
+### NEWS API
+- Follow the instructions in [the official NEWS API documentation](https://newsapi.org/docs/get-started) to register and obtain an API key.
 
-**WhatsApp**
-- 公式に従って登録し、アクセストークンを取得してください。
+### WhatsApp
+- Follow the instructions in [the official WhatsApp documentation](https://developers.facebook.com/docs/whatsapp/) to register and obtain an access token.
 
-### 環境変数
-以下は`api/`下で`.env`ファイルを作成し、記載してください。
-| 環境変数 | 用途 |
-| ------------ | ------- |
-| NEWS_API_KEY | NEWS APIのAPI KEY|
-| WHATSAPP_TOKEN | WhatsAppのトークン(時間制限有) |
+### Environment Variables
+Create a `.env` file under the `api/` directory with the following content:
 
+| Variable         | Description                          |
+|-------------------|--------------------------------------|
+| `NEWS_API_KEY`    | API key for the NEWS API            |
+| `WHATSAPP_TOKEN`  | WhatsApp access token (time-limited)|
 
-## How to run
+## How to Run
+
 ### Running Locally
-#### APP README
-https://github.com/AyumuOgasawara/news-hack/blob/main/frontend/news-hack/README.md
+#### Frontend
+See the [Frontend README](https://github.com/AyumuOgasawara/news-hack/blob/main/frontend/news-hack/README.md).
 
-#### API README
-https://github.com/AyumuOgasawara/news-hack/blob/main/api/README.md
+#### Backend
+See the [API README](https://github.com/AyumuOgasawara/news-hack/blob/main/api/README.md).
 
 ### Using Docker
-https://github.com/AyumuOgasawara/news-hack/blob/main/docker/README.md<br>
-* `docker compose` doesn't work so, if you want to use `Docker`, run them separately.
+Refer to the [Docker README](https://github.com/AyumuOgasawara/news-hack/blob/main/docker/README.md).  
+**Note**: `docker compose` is currently not functional. To use Docker, run the services individually as described in the documentation.

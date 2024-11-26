@@ -2,7 +2,7 @@
 This application sends news articles to a specified phone number via WhatsApp. Users can input a `keyword`, the `number of news articles`, and the `recipient's phone number`. The application will then send the specified number of news articles containing the given keyword to the designated phone number.
 
 ## Purpose
-This app was developed to encourage a habit of reading news by providing a passive way to engage with news articles.  
+This app was developed to encourage a habit of reading news by providing a passive way to engage with news articles.
 Currently, it is in the prototype stage. In the future, the app aims to automatically send news to specified phone numbers at customized frequencies and times.
 
 ## Architecture Diagram
@@ -49,5 +49,5 @@ See the [Frontend README](https://github.com/AyumuOgasawara/news-hack/blob/main/
 See the [API README](https://github.com/AyumuOgasawara/news-hack/blob/main/api/README.md).
 
 ### Using Docker
-Refer to the [Docker README](https://github.com/AyumuOgasawara/news-hack/blob/main/docker/README.md).  
+Refer to the [Docker README](https://github.com/AyumuOgasawara/news-hack/blob/main/docker/README.md).
 **Note**: `docker compose` is currently not functional. To use Docker, run the services individually as described in the documentation.

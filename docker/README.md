@@ -19,4 +19,4 @@ Build the Go API:
 
 Build all services using docker compose:
 
-    docker compose -f docker/docker-compose.yml up --force-recreate
+    docker compose -f docker/docker-compose.yml up --build

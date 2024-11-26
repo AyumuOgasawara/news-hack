@@ -73,4 +73,7 @@ See the [API README](https://github.com/AyumuOgasawara/news-hack/blob/main/api/R
 ### Using Docker
 
 Refer to the [Docker README](https://github.com/AyumuOgasawara/news-hack/blob/main/docker/README.md).
-**Note**: `docker compose` is currently not functional. To use Docker, run the services individually as described in the documentation.
+
+Build all services using docker compose:
+
+    docker compose -f docker/docker-compose.yml up --build

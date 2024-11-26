@@ -13,7 +13,7 @@ app.post('/articles', async (req, res) => {
   try {
     const { numArticles, keyword, phoneNumber } = req.body;
 
-    // Send the data to another REST API on api
+    // Send the data to the GO API
     const apiResponse = await fetch('http://api:8080/articles', {
       method: 'POST',
       headers: {
@@ -36,5 +36,5 @@ app.post('/articles', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://backend:${PORT}`);
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
 });

@@ -1,21 +1,35 @@
 services:
   frontend:
+    networks:
+      - app
     build:
-      context: '../frontend/news-hack'
-      dockerfile: ../docker/Frontend.Dockerfile
+      context: ../frontend/news-hack
+      dockerfile: ../../docker/Frontend.Dockerfile
     ports:
-      - "5173:5173"
+      - 5173:5173
+    depends_on:
+      - backend
   backend:
+    networks:
+      - app
     build:
-      context: '../frontend/news-hack'
-      dockerfile: ../docker/Backend.Dockerfile
+      context: ../frontend/news-hack
+      dockerfile: ../../docker/Backend.Dockerfile
     ports:
       - "5001:5001"
     depends_on:
       - api
   api:
-      build:
-        context: '../api'
-        dockerfile: ../docker/API.Dockerfile
-      ports:
-        - "8080:8080"
+    networks:
+      - app
+    build:
+      context: ../api
+      dockerfile: ../docker/API.Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - ../api/.env
+
+networks:
+  app:
+    driver: bridge

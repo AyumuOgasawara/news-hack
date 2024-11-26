@@ -22,7 +22,7 @@ export default () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
     try {
-      const response = await fetch('http://localhost:5001/articles', {
+      const response = await fetch('http://backend:5001/articles', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

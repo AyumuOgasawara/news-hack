@@ -51,7 +51,7 @@ type WhatsappMessage struct {
 func sendMessageToWhatsapp(article Article, phoneNumber string) error {
 	whatsappToken := os.Getenv("WHATSAPP_TOKEN")
 	if whatsappToken == "" {
-		return fmt.Errorf("WhatsApp token is missing")
+		return fmt.Errorf("WHATSAPP_TOKEN is missing")
 	}
 	// メッセージ本文を作成
 	messageBody := fmt.Sprintf("Source: %s\nTitle: %s\nDescription: %s\nURL: %s\nPublished At: %s",
@@ -73,7 +73,7 @@ func sendMessageToWhatsapp(article Article, phoneNumber string) error {
 
 	phoneNumberId := os.Getenv("PHONE_NUMBER_ID")
 	if phoneNumberId == "" {
-		return fmt.Errorf("WhatsApp token is missing")
+		return fmt.Errorf("PHONE_NUMBER_ID is missing")
 	}
 
 	requestURI := fmt.Sprintf("https://graph.facebook.com/v20.0/%s/messages", phoneNumberId)

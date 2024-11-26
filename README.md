@@ -7,6 +7,14 @@ This application sends news articles to a specified phone number via WhatsApp. U
 This app was developed to encourage a habit of reading news by providing a passive way to engage with news articles.
 Currently, it is in the prototype stage. In the future, the app aims to automatically send news to specified phone numbers at customized frequencies and times.
 
+## Demo Video
+
+＊For security reason I used a dummy phone number.
+
+https://github.com/user-attachments/assets/e470728d-f613-4dd6-bc34-c5ed154efdec
+
+https://github.com/user-attachments/assets/137cec13-8102-4d54-b311-7d87b1d732ed
+
 ## Architecture Diagram
 
 ![news-hack](https://github.com/user-attachments/assets/a8f71076-1d4f-4120-af12-fb2b7bb7a966)
@@ -38,16 +46,17 @@ Ensure the following are installed on your system:
 
 ### WhatsApp
 
-- Follow the instructions in [the official WhatsApp documentation](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) to register and obtain an access token.
+- Follow the instructions in [the official WhatsApp documentation](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) to register and get the access token and phone number id.
 
 ### Environment Variables
 
 Create a `.env` file under the `api/` directory with the following content:
 
-| Variable         | Description                          |
-| ---------------- | ------------------------------------ |
-| `NEWS_API_KEY`   | API key for the NEWS API             |
-| `WHATSAPP_TOKEN` | WhatsApp access token (time-limited) |
+| Variable          | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| `NEWS_API_KEY`    | API key for the NEWS API                             |
+| `WHATSAPP_TOKEN`  | WhatsApp access token (time-limited)                 |
+| `PHONE_NUMBER_ID` | This is the number the WhatsApp sends messages from. |
 
 ## How to Run
 
